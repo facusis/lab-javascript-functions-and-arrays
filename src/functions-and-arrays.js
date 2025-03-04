@@ -45,24 +45,110 @@ function sumNumbers(numbers) {
 
 
 // Iteration #3.1 Bonus:
-function sum() {}
+const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
 
+function sum(mixedArr) {
+  if(mixedArr.length === 0) {
+    return 0
+  } 
+
+  let suma = 0
+  for (let i = 0; i < mixedArr.length; i++) {
+    const element = mixedArr[i];
+
+    switch(typeof element) {
+      case 'number':
+        suma += element
+        break;
+      case 'string':
+        suma += element.length
+        break;
+      case 'boolean':
+        suma += element ? 1 : 0
+        break;
+      case 'object':
+        throw new Error("Error ----> no pueden haber objetos")
+      
+    }
+    // if(typeof mixedArr[i] === "number") {
+    //   suma += element
+
+    // } else if (typeof mixedArr[i] === 'string') {
+    //   suma += element.length
+      
+    // } else if (typeof mixedArr[i] === 'boolean'){
+    //   suma += element ? 1 : 0
+    // } 
+
+  }
+  console.log(suma)
+  return suma
+
+}
+sum(mixedArr)
 
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+function averageNumbers(numbersAvg) {
+  if(numbersAvg.length === 0) {
+    return null
+  } 
+
+  let suma = 0
+  for(const ele of numbersAvg) 
+    suma += ele
+    const avg = suma / numbersAvg.length
+  console.log(avg)
+  return avg
+}
+averageNumbers(numbersAvg)
+
 
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+function averageWordLength(wordsArr) { 
+  if(wordsArr.length === 0) {
+    return null
+  }
+
+  let word = ''
+  let wordLength = 0
+  let avgWordLength = 0
+  for (let i = 0; i < wordsArr.length; i++) {
+    word = wordsArr[i];
+    wordLength += word.length
+    avgWordLength = wordLength / wordsArr.length
+    
+  }
+  // console.log(wordLength)
+  return avgWordLength
+}
+averageWordLength(wordsArr)
+
+
 
 // Bonus - Iteration #4.1
-function avg() {}
+
+const avgNumbers = [2, 6, 9, 10, 7, 4, 1, 9];
+
+function avg(arr) {
+
+  let suma = 0
+  let avge = 0
+  for (let i = 0; i < arr.length; i++) {
+    const element = arr[i];
+    suma += element
+    avge = suma / arr.length
+  }
+  // console.log(avge)
+  return avge
+}
+avg(avgNumbers)
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
@@ -79,7 +165,25 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(arr) {
+  if(arr.length === 0) {
+    return null
+  }
+  const newArr = []
+
+  for (let i = 0; i < arr.length; i++) {
+  const element = arr[i];
+    if(!newArr.includes(element)){
+      newArr.push(element)
+      
+    }
+  }
+  console.log(newArr)
+  return newArr
+  
+}
+
+uniquifyArray(wordsUnique)
 
 
 
